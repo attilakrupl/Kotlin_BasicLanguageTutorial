@@ -3,8 +3,8 @@ package demo
 // There are no semicolons inside Kotlin
 
 fun main(args : Array<String>) {
-    println("Hello, world!")                                     // Print to the console with println
-    println(args)
+    println( "Hello, world!" )                                   // Print to the console with println
+    println( "Number of arguments: " + args.size )
 
     val lName = "Attila"                                         // Declare immutable variable, value can not be changed
     var lAge  = 34                                               // Declare mutable variable, value can be changed later
@@ -39,6 +39,19 @@ fun main(args : Array<String>) {
 
     //Long strings can be formatted with the triple quotes
     var lLongString = """This is a
-long string"""
+        |long string""".trimMargin()
     println(lLongString)
+
+    // Arrays
+    var lMixedArray = arrayOf( 1, 1.23, "Element0", 'a')
+
+    println(lMixedArray[2])
+
+    lMixedArray[1] = "New Value"
+
+    println("Array size: ${lMixedArray.size}")
+    println("Value 'a' can be found in array: ${lMixedArray.contains('a')}")
+
+    // A given range of an array can be copied into another array
+    var lNewArray = lMixedArray.copyOfRange(0,1)
 }
