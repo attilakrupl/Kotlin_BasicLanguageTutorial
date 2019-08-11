@@ -54,4 +54,20 @@ fun main(args : Array<String>) {
 
     // A given range of an array can be copied into another array
     var lNewArray = lMixedArray.copyOfRange(0,1)
+
+    //Functions
+    fun add( aNum1: Int, aNum2: Int ) : Int = aNum1 + aNum2
+    println("5 + 4 = ${add(4,5)}")
+
+    //Var args
+    fun sum(vararg aArgs : Int): Int
+    {
+        var sum = 0
+        aArgs.forEach { number -> sum += number }
+
+        return sum
+    }
+    println("Sum of 3 numbers: ${sum(4,7,44)}")
+    println("Sum of 6 numbers: ${sum(4,7,44,63,7547,234)}")
+
 }
